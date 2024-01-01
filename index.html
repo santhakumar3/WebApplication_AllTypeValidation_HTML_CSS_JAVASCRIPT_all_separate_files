@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylefile.css">
+</head>
+
+<body>
+
+    <script src="funcitonscripts.js"></script>
+
+    <div class="mainlayout">
+
+        <div class="first">
+            <input type="text" placeholder="Username" id="username" class="username"/><br>
+            <input type="password" placeholder="Password" id="password" class="username"/><br>
+            <input type="email" placeholder="Email" id="email" name="email" class="username" /><br>
+            <input type="number" placeholder="Age" id="age" name="age" class="agedropdown"/><br>
+            <input type="checkbox" id="agree" name="agree" /><label for="" class="agree">I Accept...</label><br>
+
+            <input type="radio" id="genderMale" name="gender" value="male" /><label for="" class="agree">Male</label>
+            <input type="radio" id="genderFemale" name="gender" value="female" /><label for="" class="agree">Female</label> <br>
+
+            <button id="savebutton" class="savebutton" onclick=save()>Save</button>
+            <button id="cancelbutton" class="cancelbutton" onclick=cancel()>Cancel</button><br><br><br>
+
+
+
+
+
+
+          
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Sundar_Pichai_%282023%29_cropped.jpg" class="imagedisplay"
+                id="displayedImage"><br>
+
+                  <button onclick="openFileExplorer()" class="savebutton" >Select Image</button>
+            <br>
+            
+            <input type="file" id="fileInput" style="display: none;" accept="image/*" onchange="displaySelectedImage(this)"><br>
+
+
+
+
+            <input type="text" id="username1" onblur="validateUsername()" placeholder="username" class="username">
+            <span id="usernameError"></span><br>
+
+            <input type="password" id="password1" onblur="validatePassword()" placeholder="password" class="username">
+            <span id="passwordError"></span><br>
+
+            <input type="email" id="email1" onblur="validateEmail()" placeholder="email" class="username">
+            <span id="emailError"></span><br>
+
+            <input type="checkbox" id="agree" onchange="validateCheckbox()"><label for="" class="agree">I Accept...</label><br>
+            <span id="checkboxError"></span><br>
+
+            <input type="radio" name="gender" value="male" id="male" onchange="validateGender()"><label for="" class="agree">Male</label>
+            <input type="radio" name="gender" value="female" id="female" onchange="validateGender()"><label for="" class="agree">Female</label>
+            <span id="genderError"></span><br>
+
+            <select id="country" onchange="validateCountry()" class="username">
+                <option value="">Select a country</option>
+                <option value="usa">USA</option>
+                <option value="canada">Canada</option>
+                <option value="uk">UK</option>
+            </select>
+            <span id="countryError"></span><br>
+
+            <textarea id="message" onblur="validateMessage()" class="username"></textarea>
+            <span id="messageError"></span><br>
+
+            <input type="number" id="quantity" oninput="validateQuantity()" class="username">
+            <span id="quantityError"></span><br>
+
+            <input type="date" id="dob" onchange="validateDateOfBirth()" class="username">
+            <span id="dobError"></span><br>
+
+            <input type="file" id="upload" onchange="validateFile()">
+            <span id="fileError"></span><br>
+
+            <input type="url" id="website" onblur="validateURL()" class="username">
+            <span id="websiteError"></span><br>
+
+            <input type="tel" id="phoneNumber" onblur="validatePhoneNumber()" class="username">
+            <span id="phoneError"></span><br>
+
+            <input type="color" id="favColor" onchange="validateColor()">
+            <span id="colorError"></span><br>
+
+            <input type="range" id="slider" onchange="validateRange()" class="username">
+            <span id="rangeError"></span><br>
+
+            <input type="time" id="eventTime" onchange="validateEventTime()" class="username">
+            <span id="timeError"></span><br>
+
+            <select id="colors" multiple="multiple" onchange="validateSelectedColors()">
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+            </select>
+            <span id="colorsError"></span><br>
+
+            <input type="month" id="expiryMonth" onchange="validateExpiryMonth()">
+            <span id="expiryMonthError"></span><br>
+
+            <input type="week" id="scheduleWeek" onchange="validateScheduleWeek()">
+            <span id="scheduleWeekError"></span><br>
+
+            <input type="search" id="searchQuery" onblur="validateSearchQuery()">
+            <span id="searchError"></span><br>
+
+            <input type="datetime-local" id="eventDateTime" onchange="validateEventDateTime()" class="username">
+            <span id="dateTimeError"></span><br>
+
+            <meter id="strengthMeter" min="0" max="10" value="5" high="8" low="3" optimum="10"></meter>
+            <span id="strengthError"></span><br>
+
+            <progress id="uploadProgress" value="50" max="100"></progress>
+            <span id="progressError"></span><br>
+
+            <!-- <input type="password" id="hiddenPassword" style="display: none;" onblur="validateHiddenPassword()">
+            <input type="checkbox" id="showPassword" onchange="togglePasswordVisibility()"> Show Password
+            <span id="hiddenPasswordError"></span> -->
+
+
+            <input type="file" accept="image/*" id="imageUpload" onchange="validateImage()">
+            <span id="imageError"></span><br>
+
+            <label for="amount">Amount: </label>
+            <input type="number" id="amount" step="0.01" onblur="validateCurrency()" class="username">
+            <span id="currencyError"></span><br>
+
+            <textarea id="limitedText" oninput="validateTextareaLimit()" maxlength="100"></textarea>
+            <span id="textLimitError"></span><br>
+
+            <input type="text" id="customPattern" pattern="[A-Za-z]{3}" oninput="validateCustomPattern()">
+            <span id="patternError"></span><br>
+
+            <input type="color" id="backgroundColor" onchange="validateColorContrast()">
+            <input type="color" id="foregroundColor" onchange="validateColorContrast()">
+            <span id="contrastError"></span><br>
+
+            <input type="text" id="ipAddress" onblur="validateIPAddress()">
+            <span id="ipAddressError"></span><br>
+
+            <input type="text" id="isbn" onblur="validateISBN()">
+            <span id="isbnError"></span><br>
+
+
+            <input type="text" id="creditCard" onblur="validateCreditCard()">
+            <span id="creditCardError"></span><br>
+
+            <input type="range" id="customRange" min="0" max="100" step="10" onchange="updateRangeLabel()">
+            <span id="rangeLabel">50</span><br>
+
+
+
+            <button id="savebutton" class="savebutton" onclick=saveNew()>Save</button>
+            <button id="cancelbutton" class="cancelbutton" onclick=cancelNew()>Cancel</button>
+
+
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
